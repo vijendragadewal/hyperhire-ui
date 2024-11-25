@@ -80,6 +80,18 @@ main {
   padding: 18px;
 }
 
+.mob-section-1{
+  height: 50%;
+  width: 100%;
+}
+.mob-section-2{
+  height: 50%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 8px;
+}
+
 
 @layer utilities {
   .text-balance {
@@ -199,6 +211,78 @@ main {
 
 .title {
   font-weight: bold;
+}
+
+.chat-tooltip {
+  width: 150px;
+  height: 39px;
+  background-color:#8BC4FF;
+  color:white;
+  padding: 6px 12px 6px 12px;
+  border-radius: 8px;
+  font-size: 18px;
+  display: inline-block;
+  gap:10px;
+  position: relative;
+  max-width: 443px;
+  opacity: 0;
+  animation: fadeIn 500ms forwards;
+  animation-delay: 300ms;
+}
+
+.chat-tooltip::after {
+  content: ''; 
+  position: absolute; 
+  bottom: -10px; 
+  left: 16%; 
+  transform: translateX(-50%); 
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent; 
+  border-right: 6px solid transparent; 
+  border-top: 10px solid #8BC4FF; 
+}
+
+
+.chat-tooltip .content {
+  display: flex;
+  opacity: 0; 
+  animation: fadeInContent 500ms forwards;
+  animation-delay: 600ms;
+  font-size: 18px;
+
+}
+
+
+
+.badge {
+  width: 150px;
+  height: 39px;
+  background-color:white;
+  color:#00C696;
+  padding: 6px 12px 6px 12px;
+  border-radius: 8px;
+  font-size: 18px;
+  display: inline-block;
+  gap:10px;
+  position: relative;
+  max-width: 443px;
+  opacity: 0;
+  animation: fadeIn 500ms forwards;
+  animation-delay: 300ms;
+}
+
+.badge::after {
+  content: ''; 
+  position: absolute; 
+  bottom: -10px; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent; 
+  border-right: 6px solid transparent; 
+  border-top: 10px solid white; 
 }
 
 

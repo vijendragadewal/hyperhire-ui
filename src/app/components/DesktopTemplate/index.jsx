@@ -4,12 +4,8 @@ import ProfileCarousel from "../ProfileCarousel";
 import Header from "@/app/organisms/Header";
 import ContentBox from "@/app/molecules/ContentBox";
 import ImageContentBox from "@/app/molecules/ImageContentBox";
-import Computer from "@/app/assets/computer.png";
-import Gallary from "@/app/assets/gallary.png";
-import Cube from "@/app/assets/cube.png";
-import Target from "@/app/assets/target.png";
 import Footer from "@/app/organisms/Footer";
-import Phone from "@/app/assets/phone.png";
+import { contentData, imageContentData } from "@/app/dummyData";
 
 const HyperHireDesktop = () => {
   return (
@@ -69,27 +65,27 @@ const HyperHireDesktop = () => {
                       개발자가 필요하신가요?
                     </h3>
                   </div>
+
                   <div
-                    className="flex justify-between w-3/5 font-bold animate-fadeInUp "
+                    className="flex justify-between w-3/5 font-bold animate-fadeInUp"
                     style={{
                       animationDelay: "500ms",
                       animationDuration: "500ms",
                     }}
                   >
-                    <ContentBox
-                      headContent="평균 월 120만원"
-                      description="임금을 해당 국가를 기준으로 계산합니다."
-                    />
-                    <ContentBox
-                      headContent="최대 3회 인력교체"
-                      description="막상 채용해보니 맞지 않아도 걱정하지 마세요. "
-                    />
-                    <ContentBox
-                      headContent="평균 3일, 최대 10일"
-                      description="급하게 사람이 필요한 경우에도 빠른 채용이 가능합니다."
-                    />
+                    {contentData.map((content, index) => (
+                      <ContentBox
+                        key={index}
+                        headContent={content.headContent}
+                        description={content.description}
+                      />
+                    ))}
                   </div>
                 </div>
+                {/* <div className="items-center text-center mt-6 w-3/5">
+                  <PriceBadge price={"100만원"} />
+                </div> */}
+
                 {/* Profile Card Slider */}
                 <div className="relative">
                   <ProfileCarousel />
@@ -101,46 +97,19 @@ const HyperHireDesktop = () => {
                 <div className="mt-5  mb-5">
                   <div className="grid grid-cols-4 gap-6 max-w-6xl mx-auto text-center animate-fadeIn overflow-hidden">
                     <div className="flex w-[500%] animate-slide">
-                      <div className="flex w-[25%] justify-center">
-                        <ImageContentBox
-                          icon={Computer}
-                          height={32}
-                          width={32}
-                          descriptionText="해외 마케팅"
-                        />
-                      </div>
-                      <div className="flex w-[25%] justify-center">
-                        <ImageContentBox
-                          icon={Gallary}
-                          height={32}
-                          width={32}
-                          descriptionText="퍼블리셔"
-                        />
-                      </div>
-                      <div className="flex w-[25%] justify-center">
-                        <ImageContentBox
-                          icon={Cube}
-                          height={32}
-                          width={32}
-                          descriptionText="캐드원(제도사)"
-                        />
-                      </div>
-                      <div className="flex w-[25%] justify-center">
-                        <ImageContentBox
-                          icon={Target}
-                          height={32}
-                          width={32}
-                          descriptionText="해외 세일즈"
-                        />
-                      </div>
-                      <div className="flex w-[25%] justify-center">
-                        <ImageContentBox
-                          icon={Phone}
-                          height={32}
-                          width={32}
-                          descriptionText="해외 CS"
-                        />
-                      </div>
+                      {imageContentData.map((item, index) => (
+                        <div
+                          key={index}
+                          className="flex w-[25%] justify-center"
+                        >
+                          <ImageContentBox
+                            icon={item.icon}
+                            height={item.height}
+                            width={item.width}
+                            descriptionText={item.descriptionText}
+                          />
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>

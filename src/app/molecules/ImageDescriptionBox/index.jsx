@@ -16,7 +16,7 @@ export default function ImageDescriptionBox({
 
       <p class="text-gray-700 font-semibold">{descriptionText}</p>
       <p class="text-gray-500 font-semibold">
-        <span>
+        <span class="flex">
           바로가기
           <Image src={rightArrow} width={25} height={25} />
         </span>

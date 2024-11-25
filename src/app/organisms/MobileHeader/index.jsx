@@ -6,14 +6,14 @@ import Image from "next/image";
 export default function Header() {
   return (
     <header className="w-full h-12">
-      <nav className="bg-blue-500 py-4 text-white">
+      <nav className="py-4 text-white">
         <div className="container mx-auto px-4 flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center">
             <IconWithLabel
               icon={HyperHire}
               lableName="Hyperhire"
-              className="h-8 text-white"
+              className="h-8 flex items-center text-white font-bold"
               width={16}
               height={16}
               position="front"

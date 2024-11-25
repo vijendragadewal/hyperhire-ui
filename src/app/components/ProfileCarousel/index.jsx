@@ -73,7 +73,7 @@ export default function ProfileCarousel() {
     >
       {profiles.map((profile, idx) => (
         <div key={idx} className="keen-slider__slide flex justify-center">
-          <div className="bg-white rounded-xl shadow-lg p-4 w-60">
+          <div className="bg-white rounded-xl shadow-lg p-4 w-60 ">
             <div className="flex justify-center mb-4">
               <Image
                 src={Avatar}

@@ -1,19 +1,11 @@
 "use client";
 import IconWithLabel from "@/app/molecules/IconWithLabel";
 import HyperHire from "../../assets/hyperhire-white.png";
-import Image from "next/image";
-import { useState } from "react";
 import Dropdown from "@/app/molecules/Dropdown";
+import { Data } from "@/app/dummyData";
 
 //https://nextjs.org/icons/next.svg
 export default function Header() {
-  const Data = [
-    "채용",
-    "해외 개발자 원격 채용",
-    "외국인 원격 채용 (비개발 직군)",
-    "한국어 가능한 외국인 채용",
-  ];
-
   return (
     <header className="w-full py-5">
       <nav className=" text-white">
